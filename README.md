@@ -20,16 +20,16 @@ Configuration is achieved by specifying paths to various certificates private ke
 
 ```bash
 # Pass certificate
-export SIGNING_CERT=/path/to/cert.pem
+export SIGNING_CERT=[Base64-encoded cert]
 
 # Pass key certificate
-export PRIVATE_KEY=/path/to/passkey.pem
+export PRIVATE_KEY=[Base64-encoded cert]
 
 # Pass key certificate password (optional)
 export PRIVATE_KEY_PASSWORD=purplemonkeydishwasher
 
 # Apple Worldwide Developer Relations Certification Authority certificate
-export WWDR_CERT=/path/to/wwdr.pem
+export WWDR_CERT=[Base64-encoded cert]
 ```
 
 ## Usage
