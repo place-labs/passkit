@@ -3,7 +3,7 @@ require "openssl"
 require "../constants"
 require "../error"
 
-class Passkit::Signer
+class PassKit::Signer
   @signing_cert : String
   @private_key : String
   @private_key_password : String | Nil
@@ -14,10 +14,10 @@ class Passkit::Signer
 
   def self.from_env
     new(
-      Passkit.settings.signing_cert,
-      Passkit.settings.private_key,
-      Passkit.settings.wwdr_cert,
-      Passkit.settings.private_key_password
+      PassKit.settings.signing_cert,
+      PassKit.settings.private_key,
+      PassKit.settings.wwdr_cert,
+      PassKit.settings.private_key_password
     )
   end
 
