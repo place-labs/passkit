@@ -1,11 +1,11 @@
 module PassKit
-  SIGNING_CERT         = read_base64_key(ENV["SIGNING_CERT"])
-  PRIVATE_KEY          = read_base64_key(ENV["PRIVATE_KEY"])
+  SIGNING_CERT         = env_base64("SIGNING_CERT")
+  PRIVATE_KEY          = env_base64("PRIVATE_KEY")
+  WWDR_CERT            = env_base64("WWDR_CERT")
   PRIVATE_KEY_PASSWORD = ENV["PRIVATE_KEY_PASSWORD"]
-  WWDR_CERT            = read_base64_key(ENV["WWDR_CERT"])
 
-  private def self.read_base64_key(key : String) : String
-    raise ArgumentError.new("Base64-encoded Key is empty") unless key.presence
-    String.new(Base64.decode(key))
+  private def self.env_base64(key : String) : String
+    raise ArgumentError.new("Base64-encoded ENV #{key} is empty") unless ENV[key].presence
+    String.new(Base64.decode(ENV[key]))
   end
 end
