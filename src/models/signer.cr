@@ -3,17 +3,22 @@ require "openssl"
 require "../constants"
 require "../error"
 
-class PassKit::Signer
+class Passkit::Signer
   @signing_cert : String
   @private_key : String
   @private_key_password : String | Nil
   @wwdr_cert : String
 
-  def initialize
-    @signing_cert = PassKit::SIGNING_CERT
-    @private_key = PassKit::PRIVATE_KEY
-    @private_key_password = PassKit::PRIVATE_KEY_PASSWORD
-    @wwdr_cert = PassKit::WWDR_CERT
+  def initialize(@signing_cert, @private_key, @private_key_password, @wwdr_cert)
+  end
+
+  def self.from_env
+    new(
+      Passkit.settings.signing_cert,
+      Passkit.settings.private_key,
+      Passkit.settings.wwdr_cert,
+      Passkit.settings.private_key_password
+    )
   end
 
   def sign(data) : String

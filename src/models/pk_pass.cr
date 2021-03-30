@@ -11,7 +11,7 @@ class PassKit::PKPass
   def initialize(pass : Pass)
     @pass = pass
     @manifest = Manifest.new(@pass)
-    @signer = Signer.new
+    @signer = Signer.from_env
   end
 
   def add_url(url : String)
