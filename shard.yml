@@ -1,6 +1,6 @@
 name: passkit
 version: 0.2.0
-crystal: 0.35.1
+crystal: ">= 0.35.1"
 
 development_dependencies:
   webmock:
