@@ -19,16 +19,16 @@ Crystal shard for creating signed Apple Passes.
 Configuration is achieved by specifying paths to various certificates private keys.
 
 ```bash
-# Pass certificate
+# Base64-encoded Pass certificate
 export SIGNING_CERT=<...>
 
-# Pass key certificate
+# Base64-encoded Pass key certificate
 export PRIVATE_KEY=<...>
 
 # Pass key certificate password (optional)
 export PRIVATE_KEY_PASSWORD=purplemonkeydishwasher
 
-# Apple Worldwide Developer Relations Certification Authority certificate
+# Base64-encoded Apple Worldwide Developer Relations Certification Authority certificate
 export WWDR_CERT=<...>
 ```
 
