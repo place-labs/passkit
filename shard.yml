@@ -1,8 +1,10 @@
 name: passkit
-version: 0.1.0
-crystal: 0.35.1
+version: 0.2.0
+crystal: ">= 0.35.1"
 
 development_dependencies:
   webmock:
     github: manastech/webmock.cr
     branch: master
+  habitat:
+    github: luckyframework/habitat
